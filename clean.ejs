@@ -1,0 +1,80 @@
+<style>
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+
+.container {
+  font-family: "Quicksand", sans-serif;
+}
+
+h2 {
+  text-align: right;
+}
+
+ul {
+  margin: 2rem 0px;
+}
+li {
+  list-style-type: none;
+  font-size: 2.1rem;
+}
+
+.minutes {
+  font-size: 2.4rem;
+}
+.math {
+  font-weight: bold;
+  float: right;
+}
+.total-cost {
+  font-size: 4.8rem;
+  display: block;
+}
+
+@media print {
+  body, .header, .body, a {
+    color: #000 !important;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background: transparent;
+  }
+}
+</style>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>
+        <span><%= timecard.name || args.name || "My Invoice" %></span>
+        <small><%- timecard.tagline || args.tagline || "" %></small>
+      </h1>
+    </div>
+    
+    <div class="body">
+      <ul>
+        <% timecard.card.map((stamp) => { %>
+          <% stamp.times.map((time) => { %>
+            <li class="<%= stamp.disabled ? "disabled" : "enabled" %>">
+              <%= stamp.date %>
+              <span style="float: right" >
+                <%= time.start %> to <%= time.end %>
+              </span>
+            </li>
+          <% }); %>
+        <% }); %>
+      </ul>
+
+      <br/>
+      <span class="minutes">
+        <%= Math.round(totalTime / 60)%> minutes of work
+        <% if (timecard.hourlyRate) { %>
+          <span class="math">$<%= timecard.hourlyRate %> an hour</span>
+        <% } %>
+      </span>
+
+      <% if (typeof totalCost !== "undefined" && totalCost) { %>
+        <span class="total-cost">$<%= totalCost %></span>
+      <% } %>
+    </div>
+  </div>
+</body>
