@@ -228,7 +228,7 @@
           <% }); %>
         </span>
       <span class="total-cost" style="border-color: <%= timecard.primaryColor %>;">
-        <% if (total.taxPercent) { %>
+        <% if (timecard.taxPercent) { %>
           <span class="prehead tax">Tax</span>
           <span class="value tax"><%= total.taxPercent %></span>
         <% } %>
