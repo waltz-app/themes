@@ -244,7 +244,9 @@
         <% } %>
         <br />
         <span class="prehead">Total</span>
-        <span class="value">$<%= totalCost %></span>
+        <% if (typeof totalCost !== "undefined" && totalCost) { %>
+          <span class="value">$<%= totalCost %></span>
+        <% } %>
       </span>
     </div>
   </div>
