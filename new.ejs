@@ -193,9 +193,12 @@
 <body>
   <div class="sample-invoice">
     <div class="contact-info">
-      <span class="name">John Smith</span>
-      <span class="address">123 Oak Street</span>
-      <span class="address-2">Syracuse, NY 13210</span>
+      <% if (timecard.address && Array.isArray(timecard.address) && timecard.address.length) { %>
+        <span class="name"><%= timecard.address[0] %></span>
+        <%= timecard.address.slice(1).map((i, ct) => { %>
+          <span class="address-<%= ct %>"><%= i %></span>
+        <% }) %>
+      <% } %>
     </div>
     
     <div class="project-info">
@@ -207,8 +210,12 @@
       </span>
       <span class="totals" style="background-color: <%= timecard.primaryColor %>;">
         <span class="prehead">Amount Due</span>
-        <span class="pull-left">$874.00</span>
-        <small class="pull-right">656 minutes</small>
+        <% if (typeof totalCost !== "undefined" && totalCost && totalTime) { %>
+          <span class="pull-left">$<%= totalCost %></span>
+          <small class="pull-right"><%= totalTime %></small>
+        <% } else { %>
+          <span class="pull-left">$0.00</span>
+        <% } %>
       </span>
     </div>
     
