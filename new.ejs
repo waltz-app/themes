@@ -195,9 +195,9 @@
     <div class="contact-info">
       <% if (timecard.address && Array.isArray(timecard.address) && timecard.address.length) { %>
         <span class="name"><%= timecard.address[0] %></span>
-        <%= timecard.address.slice(1).map((i, ct) => { %>
+        <% timecard.address.slice(1).map((i, ct) => { %>
           <span class="address-<%= ct %>"><%= i %></span>
-        <% }) %>
+        <% }); %>
       <% } %>
     </div>
     
