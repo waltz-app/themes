@@ -1,176 +1,182 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <style>
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 .sample-invoice {
-    max-width: 1000px;
-    color: #333;
-    height: 100%;
-    font-family: "Open Sans", Helvetica, sans-serif;
-    cursor: default;
-    background: #fff;
-    padding: 64px 12px 32px 12px;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: block;
+  color: #333;
+  height: 100%;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  cursor: default;
+  background: #fff;
+  padding: 64px 12px 32px 12px;
 }
 .sample-invoice .header {
-    margin-bottom: 0.8em;
-    color: #fff;
-    text-align: center;
-    width: 400px;
+  margin-bottom: 0.8em;
+  color: #fff;
+  text-align: center;
+  width: 400px;
 }
 .sample-invoice .prehead {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8em;
-    margin-bottom: 0.6em;
-    display: inline-block;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-bottom: 0.6em;
+  display: inline-block;
 }
 .sample-invoice .contact-info {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 10em;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 10em;
 }
-@media (min-width: 992px) {
-    .sample-invoice .contact-info {
-        float: left;
-        width: 66.6666666667%;
-    }
+@media (min-width: 400px) {
+  .sample-invoice .contact-info {
+    float: left;
+    width: 66.6666666667%;
+  }
 }
 .sample-invoice .contact-info span {
-    white-space: nowrap;
-    display: block;
+  white-space: nowrap;
+  display: block;
 }
 .sample-invoice .project-info {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 10em;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 10em;
 }
-@media (min-width: 992px) {
-    .sample-invoice .project-info {
-        float: left;
-        width: 33.3333333333%;
-    }
+@media (min-width: 400px) {
+  .sample-invoice .project-info {
+    float: left;
+    width: 33.3333333333%;
+  }
 }
 .sample-invoice .project-info span {
-    white-space: nowrap;
-    display: block;
+  white-space: nowrap;
+  display: block;
 }
 .sample-invoice .project-info .project {
-    padding: 0.5em;
+  padding: 0.5em;
 }
 .sample-invoice .project-info .totals {
-    padding: 1em;
-    color: #fff;
-    margin-top: 0.8em;
+  padding: 1em;
+  color: #fff;
+  margin-top: 0.8em;
 }
 .sample-invoice .project-info .totals:before,
 .sample-invoice .project-info .totals:after {
-    content: " ";
-    display: table;
+  content: " ";
+  display: table;
 }
 .sample-invoice .project-info .totals:after {
-    clear: both;
+  clear: both;
 }
 .sample-invoice .project-info .totals small {
-    margin-top: 0.425em;
+  margin-top: 0.425em;
 }
 .sample-invoice .project-info .totals small:before {
-    content: "(";
+  content: "(";
 }
 .sample-invoice .project-info .totals small:after {
-    content: ")";
+  content: ")";
 }
 .sample-invoice .total-cost {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 10em;
-    border-top: 4px solid #333333;
-    margin-top: 2em;
-    padding: 1em 1em 0em 1em;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 10em;
+  border-top: 4px solid #333333;
+  margin-top: 2em;
+  padding: 1em 1em 0em 1em;
 }
-@media (min-width: 992px) {
-    .sample-invoice .total-cost {
-        float: left;
-        width: 33.3333333333%;
-    }
+@media (min-width: 400px) {
+  .sample-invoice .total-cost {
+    float: left;
+    width: 33.3333333333%;
+  }
 }
-@media (min-width: 992px) {
-    .sample-invoice .total-cost {
-        margin-left: 66.6666666667%;
-    }
+@media (min-width: 400px) {
+  .sample-invoice .total-cost {
+    margin-left: 66.6666666667%;
+  }
 }
 .sample-invoice .total-cost span.tax {
-    color: #777777;
+  color: #777777;
 }
 .sample-invoice .total-cost span.value {
-    white-space: nowrap;
-    display: inline;
+  white-space: nowrap;
+  display: inline;
+  float: right;
 }
 .sample-invoice .total-cost span.prehead {
-    white-space: nowrap;
-    display: inline;
-    margin-right: 1em;
+  white-space: nowrap;
+  display: inline;
+  margin-right: 1em;
 }
 .sample-invoice .body {
-    position: relative;
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-left: 1.2em;
-    margin-top: 2em;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 1.2em;
+  margin-top: 2em;
 }
-@media (min-width: 992px) {
-    .sample-invoice .body {
-        float: left;
-        width: 100%;
-    }
+@media (min-width: 400px) {
+  .sample-invoice .body {
+    float: left;
+    width: 100%;
+  }
 }
 .sample-invoice li {
-    list-style-type: none;
+  list-style-type: none;
 }
 .sample-invoice .header a,
 .sample-invoice .header p {
-    color: white;
+  color: white;
 }
 .sample-invoice .right {
-    float: right;
+  float: right;
 }
 .sample-invoice li.enabled {
-    padding: 6px 16px;
+  padding: 6px 16px;
 }
 .sample-invoice li.disabled {
-    padding: 6px 16px;
-    color: #777777;
-    display: none;
+  display: none;
+}
+.sample-invoice li.enabled.paid-prev {
+  padding: 6px 16px;
+  color: #777777;
 }
 .sample-invoice .totaltime {
-    padding: 6px 16px;
-    width: 100%;
-    display: block;
+  padding: 6px 16px;
+  width: 100%;
+  display: block;
 }
 .sample-invoice-header {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 .sample-invoice-header h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 8rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 8rem;
 }
 .sample-invoice-header h2 {
-    text-align: center;
-    font-weight: normal;
-    font-size: 4rem;
-    margin-top: 0em;
+  text-align: center;
+  font-weight: normal;
+  font-size: 4rem;
+  margin-top: 0em;
 }
 .sample-invoice-header h3 {
-    text-align: center;
-    font-weight: normal;
-    font-size: 1.6rem;
-    margin-top: 0em;
-    color: #777777;
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.6rem;
+  margin-top: 0em;
+  color: #777777;
 }
 @media print {
   body, .header, .body, a {
@@ -185,10 +191,7 @@
 </style>
 
 <body>
-
-
   <div class="sample-invoice">
-  
     <div class="contact-info">
       <span class="name">John Smith</span>
       <span class="address">123 Oak Street</span>
@@ -212,9 +215,9 @@
     <div class="body">
       <span class="prehead">Breakdown</span>
         <span>
-          <li class="disabled">
+          <li class="enabled paid-prev">
             Previously paid
-            <span class="right"><%= "paidTime" %></span>
+            <span class="right">$<%= paidTime %></span>
           </li>
         </span>
         <span>
@@ -234,33 +237,10 @@
         <% } %>
         <br />
         <span class="prehead">Total</span>
-        <span class="value"><%= totalCost %></span>
+        <% if (typeof totalCost !== "undefined" && totalCost) { %>
+          <span class="value">$<%= totalCost %></span>
+        <% } %>
       </span>
-    </div>
-
-  
-  
-  
-  
-  
-  
-    <div class="header">
-
-    </div>
-    
-    <div class="body">
-      <span class="prehead">Breakdown</span>
-      <br/>
-      <span class="prehead">Totals</span>
-      <br/>
-      <%= Math.round(totalTime / 60)%> minutes of work
-      <% if (timecard.hourlyRate) { %>
-        &times; $<%= timecard.hourlyRate %> an hour
-      <% } %>
-
-      <% if (typeof totalCost !== "undefined" && totalCost) { %>
-        <span style="float: right;">$<%= totalCost %></span>
-      <% } %>
     </div>
   </div>
 </body>
