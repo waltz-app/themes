@@ -1,0 +1,91 @@
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body, .body {
+  max-width: 800px;
+  margin: 20px auto 0px auto;
+  background: white;
+}
+.container {
+  color: #333;
+  height: 100%;
+  padding: 10px;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+.header {
+  background: <%= timecard.primaryColor || timecard.bgcolor || "#DB4C3E" %>;
+  padding: 2em;
+  margin-bottom: 0.8em;
+  color: #fff;
+  text-align: center;
+}
+.prehead {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+  margin-bottom: 0.6em;
+  display: inline-block;
+}
+.body {
+  padding-left: 1.2em;
+}
+li {
+  list-style-type: none;
+}
+li:before {
+  content: "- ";
+}
+.header a, .header p {
+  color: white;
+}
+.disabled, .disabled span {
+  text-decoration: line-through;
+}
+.right {
+  float: right;
+}
+@media print {
+  body, .header, .body, a {
+    color: #000 !important;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background: transparent;
+  }
+}
+</style>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><%= timecard.name || args.name || "My Invoice" %></h1>
+      <h2><%- timecard.tagline || args.tagline || "" %></h2>
+    </div>
+    
+    <div class="body">
+      <span class="prehead">Breakdown</span>
+      <% timecard.card.map((stamp) => { %>
+        <% stamp.times.map((time) => { %>
+          <li class="<%= stamp.disabled ? "disabled" : "enabled" %>">
+            <%= stamp.date %>
+            <span class="right">
+              <%= time.start %> to <%= time.end %>
+            </span>
+          </li>
+        <% }); %>
+      <% }); %>
+
+      <br/>
+      <span class="prehead">Totals</span>
+      <br/>
+      <%= Math.round(totalTime / 60)%> minutes of work
+      <% if (timecard.hourlyRate) { %>
+        &times; $<%= timecard.hourlyRate %> an hour
+      <% } %>
+
+      <% if (typeof totalCost !== "undefined" && totalCost) { %>
+        <span style="float: right;">$<%= totalCost %></span>
+      <% } %>
+    </div>
+  </div>
+</body>
