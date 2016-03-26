@@ -6,7 +6,6 @@
     margin: 20px auto;
     display: block;
     color: #333;
-    height: 100%;
     font-family: "Open Sans", Helvetica, sans-serif;
     cursor: default;
     background: #fff;
@@ -86,6 +85,12 @@
   }
   .sample-invoice .total-cost {
     position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
     min-height: 1px;
     padding-left: 15px;
     padding-right: 15px;
@@ -93,6 +98,7 @@
     border-top: 4px solid #333333;
     margin-top: 2em;
     padding: 1em 1em 0em 1em;
+    border-color: #8ac450;
   }
   @media (min-width: 400px) {
     .sample-invoice .total-cost {
