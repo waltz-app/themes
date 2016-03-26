@@ -58,6 +58,7 @@
     white-space: nowrap;
     display: block;
     overflow: hidden;
+    text-overflow: ellipsis;
   }
   .sample-invoice .project-info .project {
     padding: 0.5em;
@@ -212,7 +213,9 @@
       <span class="project">
         <span class="prehead">Project</span>
         <span class="address">
-          <%= timecard.name || args.name || "My Invoice" %> -  <%= timecard.tagline || args.tagline || "" %>
+          <%= timecard.name || args.name || "My Invoice" %>
+          <br/>
+          <small><%= timecard.tagline || args.tagline || "" %></small>
         </span>
       </span>
       <span class="totals" style="background-color: <%= timecard.primaryColor %>;">
